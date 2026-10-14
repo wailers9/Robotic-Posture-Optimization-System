@@ -1,0 +1,88 @@
+{
+  "seed": 42,
+  "robot": {
+    "urdf": "../models/cr7.urdf",
+    "tip_link": "Link6",
+    "base_pose_mm_deg": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "tcp_pose_mm_deg": [
+      0,
+      0,
+      100,
+      0,
+      0,
+      0
+    ],
+    "exclude_links": [],
+    "allowed_collision_pairs": [],
+    "package_paths": {}
+  },
+  "orientation_rpy_deg": [
+    0,
+    0,
+    0
+  ],
+  "target": {
+    "kind": "box",
+    "min_mm": [
+      -200,
+      -500,
+      700
+    ],
+    "max_mm": [
+      200,
+      -300,
+      900
+    ],
+    "spacing_mm": 100,
+    "boundary_tolerance_mm": 0.001
+  },
+  "initial": {
+    "kind": "box",
+    "min_mm": [
+      -100,
+      -500,
+      700
+    ],
+    "max_mm": [
+      100,
+      -300,
+      900
+    ],
+    "spacing_mm": 100,
+    "boundary_tolerance_mm": 0.001
+  },
+  "candidates": {
+    "count": 6,
+    "attempts": 150,
+    "ik_branches": 4,
+    "joint_seeds_deg": [],
+    "dedup_deg": 3
+  },
+  "validation": {
+    "collision_check": false,
+    "cartesian_step_mm": 10,
+    "joint_step_deg": 0.5,
+    "max_joint_jump_deg": 8,
+    "position_tolerance_mm": 0.5,
+    "orientation_tolerance_deg": 0.25,
+    "inverse_condition_min": 0.06,
+    "characteristic_length_m": 0.5,
+    "collision_margin_mm": 2,
+    "planner": "seeded_ik"
+  },
+  "optimization": {
+    "k": 2,
+    "method": "cp_sat",
+    "de_maxiter": 100,
+    "de_popsize": 15,
+    "time_limit_s": 10
+  },
+  "obstacles": []
+}

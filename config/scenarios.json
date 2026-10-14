@@ -1,0 +1,41 @@
+{
+  "base_config": "default.json",
+  "scenarios": [
+    {
+      "name": "nominal",
+      "overrides": {}
+    },
+    {
+      "name": "translated_workspace",
+      "overrides": {
+        "target": {
+          "min_mm": [
+            -200,
+            -400,
+            700
+          ],
+          "max_mm": [
+            200,
+            -200,
+            900
+          ]
+        }
+      }
+    },
+    {
+      "name": "alternate_tcp",
+      "overrides": {
+        "robot": {
+          "tcp_pose_mm_deg": [
+            0,
+            0,
+            150,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  ]
+}

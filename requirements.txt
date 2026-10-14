@@ -1,0 +1,6 @@
+tesseract-robotics-nanobind==0.35.0.8
+numpy>=1.26,<3
+scipy>=1.11,<2
+matplotlib>=3.8,<4
+ortools>=9.10,<10
+PyYAML>=6,<7

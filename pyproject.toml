@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robotic-posture-optimization-system"
+version = "0.2.0"
+description = "Configurable robot posture optimization, multi-scenario Cartesian coverage and singularity monitoring"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = ["tesseract-robotics-nanobind==0.35.0.8", "numpy>=1.26,<3", "scipy>=1.11,<2", "matplotlib>=3.8,<4", "ortools>=9.10,<10", "PyYAML>=6,<7"]
+
+[project.scripts]
+posture-opt = "posture_optimization.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["posture_optimization*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.package-data]
+posture_optimization = ["monitor.html"]
+
+[tool.setuptools.data-files]
+"share/robotic-posture-optimizer/config" = ["config/*.json"]
+"share/robotic-posture-optimizer/models" = ["models/cr7.urdf", "models/LICENSE", "models/README.md"]
+"share/robotic-posture-optimizer/models/meshes" = ["models/meshes/*.STL"]
